@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING
   }, {
     sequelize,
+    freezeTableName: true,
     modelName: 'user',
   });
   return user;
