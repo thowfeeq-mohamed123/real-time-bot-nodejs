@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require('cors');
 const { findAll, create } = require("./controller/user.controller");
 const db = require("./models");
 const app = express();
@@ -15,6 +16,8 @@ db.sequelize
   });
 
 app.use(bodyParser.json());
+
+app.use(cors());
 
 const port = process.env.PORT || 5001;
 
